@@ -35,7 +35,7 @@ jobs:
           echo 'Guardamos archivo'
           python -m coverage xml -i
       - name: Verificar ubicación del archivo de cobertura
-        run: ls -R  # Lista todos los archivos y directorios para confirmar la ubicación de coverage.xml
+        run: ls -R
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -44,6 +44,5 @@ jobs:
         with:
           args: >
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.sources=src  # Actualiza "src" si tus archivos de código están en otro directorio
-
+            -Dsonar.sources=src
 
