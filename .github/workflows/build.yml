@@ -38,7 +38,7 @@ jobs:
         run: ls -R
       - name: Ajustar rutas en coverage.xml
         run: |
-          sed -i 's|<source>.*</source>|<source>/home/runner/work/TutorialCancionesTags/TutorialCancionesTags</source>|g' coverage.xml
+          sed -i 's|/home/runner/work/TutorialCancionesTags/TutorialCancionesTags/||g' coverage.xml
       - name: Verificar contenido de coverage.xml
         run: |
           head -n 20 coverage.xml
